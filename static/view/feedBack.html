@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>意见反馈</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="js/polyfill.min.js"></script>
+</head>
+
+<body>
+    <div id="root" v-cloak>
+    	<div class="functionColumn" id="functionColumn">
+    		<div class="wrap">
+		    	<div class="title">请填写反馈内容</div>
+		    	<div class="textArea">
+		    		<textarea placeholder="请在此填写反馈内容" v-model.trim()="vaule" @input="checkLength"></textarea>
+		    		<span>{{vaule.length}}/{{maxLength}}</span>
+		    	</div>
+		    	<div class="uploadImg">
+		    		<p v-for="(i,index) in uploadList">
+		    			<span></span>
+		    			<input @change="uploadImg($event,i)" type="file" v-show="i.showInput">
+		    			<img :src="i.imgSrc" v-show="i.imgLoaded" @touchstart.stop.prevent="showBigImg(i)">
+		    			<i v-show="i.imgLoaded" @click="deleteImg($event,i,index)"></i>
+		    		</p>
+		    	</div>
+		    </div>
+	    	<div id="common_button">
+	    		<button :disabled="vaule.length==0" @click="submit" >提交</button>
+	    	</div>
+	    </div>
+
+	    <!-- <big-image></big-image> -->
+
+    </div>
+</body>
+
+</html>

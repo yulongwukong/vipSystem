@@ -1,0 +1,124 @@
+@import url("./base.less");
+
+body{
+	background: #fff;
+}
+
+.functionColumn{
+	width: 6.9rem;
+	margin:0 auto;
+	overflow: hidden;
+	display: flex;
+	flex-direction:column;
+	justify-content:space-between;
+	.title{
+		color: @blue;
+		font-family: "PingFangSC-Semibold";
+		font-size: 0.3rem;
+		margin: 0.16rem 0 0.3rem;
+	};
+	.textArea{
+		width: 100%;
+		height: 3.2rem;
+		margin-bottom: 0.44rem;
+		position: relative;
+		resize:none;
+		textarea{
+			width: 100%;
+			height: 100%;
+			padding: 0.1rem;
+			box-sizing: border-box;
+			border: 0.5px solid @grey;
+			border-radius: 0.1rem;
+			font-size: 0.3rem;
+			color: #9223FF;
+			&::-webkit-input-placeholder{
+				color: #ccc;
+			}
+		}
+		span{
+			position: absolute;
+			right: 0.2rem;
+			bottom: 0.1rem;
+			font-size: 0.28rem;
+			color: @blue;
+			background: #fff;
+			padding: 0.05rem 0.1rem;
+			border-radius: 0.2rem;
+		}
+	};
+
+	.uploadImg{
+		width: 100%;
+		display: flex;
+		p{
+			width: 1.56rem;
+			height: 1.56rem;
+			position: relative;
+			background: url("../image/feedBack/icon_add.png") no-repeat center center;
+			background-size: 0.8rem 0.8rem;
+			border: 0.5px solid @grey;
+			border-radius: 0.1rem;
+			margin-right: 0.2rem;
+			span{
+				width: 100%;
+				height: 100%;
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				z-index: 100;
+				background: url(../image/load.gif) no-repeat center center #fff;
+				background-size: 0.64rem;
+				display: none;
+			}
+			input{
+				width: 100%;
+				height: 100%;
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				font-size: 0.3rem;
+				opacity: 0;
+			}
+			img{
+				width: 100%;
+				height: 100%;
+				display: block;
+				border-radius: 0.1rem;
+				border: none;
+			}
+			i{
+				width: 0.32rem;
+				height: 0.32rem;
+				background: url(../image/feedBack/icon_delete.png) no-repeat;
+				background-size: contain;
+				display: block;
+				position: absolute;
+				right: -0.16rem;
+				top: -0.16rem;
+			}
+		}
+	}
+	#common_button{
+		width: 6.9rem;
+		height: 0.8rem;
+		border-radius: 0.46rem;
+		overflow: hidden;
+		margin: 0 auto 0.6rem;
+		button{
+			width: 100%;
+			display: block;
+			height: 100%;
+			line-height: 0.8rem;
+			text-align: center;
+			font-size: 0.32rem;
+			color: #fff;
+			background-image: linear-gradient(30deg, #9223FF 0%, @blue 100%);
+			&:disabled{
+				opacity: 0.5;
+			}
+		}
+	}
+}
